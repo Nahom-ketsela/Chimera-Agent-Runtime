@@ -1,0 +1,15 @@
+**/.git
+**/.gitignore
+**/.vscode
+**/.venv
+**/__pycache__
+**/*.pyc
+**/*.pyo
+**/*.pyd
+**/.DS_Store
+**/tmp
+**/coverage
+**/.pytest_cache
+**/env
+**/.env
+**/venv
