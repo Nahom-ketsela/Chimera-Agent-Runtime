@@ -10,7 +10,7 @@ Never generate code without verifying the `correlation_id` and `persona_id` requ
 Always explain the architectural plan before writing code. This ensures alignment with the Specification-Driven Development (SDD) methodology and maintains system integrity.
 
 ## Stack
-- **Python**: Version 3.11
+- **Python**: Version 3.12
 - **uv**: High-speed package manager and environment resolver
 - **Weaviate**: Semantic vector database for content and metadata storage
 - **MCP Sense**: Logging and monitoring framework for MCP-native systems

@@ -1,0 +1,39 @@
+language: "en-US"
+early_access: false
+reviews:
+  profile: "chill"
+  request_changes_workflow: false
+  high_level_summary: true
+  auto_review:
+    enabled: true
+    ignore_title_keywords:
+      - "WIP"
+      - "Dont merge"
+  tools:
+    ast-grep:
+      enabled: true
+    bandit:
+      enabled: true  # Python security checks
+    ruff:
+      enabled: true  # Python linting
+
+chat:
+  auto_reply: true
+
+instructions: |
+  You are a Senior Architect for Project Chimera.
+  
+  # Governance & Spec Alignment Policy
+  1. **Spec Verification**: You MUST verify that all code changes align with the definitions in `specs/`. If a PR implements a feature not in `specs/`, flag it immediately.
+     - Check `specs/technical.md` for API contracts.
+     - Check `specs/functional.md` for user requirements.
+  
+  2. **Traceability**: Ensure every major function or class includes a docstring referencing the specific requirement key (e.g., `Req-1.2`) or User Story it fulfills.
+  
+  3. **Security First**: Prioritize security.
+     - Flag hardcoded secrets or sensitive context in logs (e.g., `correlation_id` is fine, `recipient_wallet` private keys are NOT).
+     - Ensure all external inputs (e.g., from OpenClaw) are validated against the schema.
+  
+  4. **The Prime Directive**: As defined in `CLAUDE.md`: "Never generate code without verifying the `correlation_id` and `persona_id` requirements."
+  
+  5. **Docker & Make**: Ensure that no "works on my machine" scripts are introduced. All run commands must go through the `Makefile` and run inside Docker.
