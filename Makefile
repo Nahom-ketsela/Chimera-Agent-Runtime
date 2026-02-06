@@ -4,11 +4,11 @@ setup:
 	uv sync
 
 test:
-	uv run pytest
-
-container-test:
 	docker build -t chimera-governor .
 	docker run --rm chimera-governor
+
+local-test:
+	uv run pytest
 
 spec-check:
 	@echo "Checking specs directory..."
