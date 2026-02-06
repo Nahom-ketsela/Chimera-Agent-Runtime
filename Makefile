@@ -16,6 +16,9 @@ spec-check:
 	   [ -f specs/_meta.md ] && \
 	   [ -f specs/functional.md ] && \
 	   [ -f specs/technical.md ] && \
+	   [ -f specs/frontend.md ] && \
+	   [ -f specs/security.md ] && \
+	   [ -f specs/mcp_tooling.md ] && \
 	   [ -f specs/openclaw_integration.md ]; then \
 		echo "All required spec files are present."; \
 	else \
